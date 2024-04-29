@@ -1,6 +1,7 @@
 <?php
 
 $frase=$_POST['frase'];
+$parola = $_POST['parola']
 
 ?>
 
@@ -30,7 +31,7 @@ $frase=$_POST['frase'];
     <body>
         <h2>la tua frase é:</h2>
         <p>
-            <?php echo $frase ?>
+            <?php echo str_replace($parola, '***', $frase) ?>
         </p>
 
        

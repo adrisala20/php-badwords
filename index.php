@@ -31,10 +31,11 @@
     </header>
 
     <body>
-        <h2>scrivi qualcosa</h2>
+        <h2>scrivi una frase</h2>
         <form action="risposta.php" method="post">
-            <input type="text" name="frase">
-            <button type="submit"> Invia</button>
+            <input type="text-area" name="frase" placeholder="inserisci una frase">
+            <input type="text" name="parola" placeholder="inserisci una parola da censurare">
+            <button  type="submit"> Invia</button>
         </form>
     </body>
 
