@@ -1,8 +1,13 @@
 <?php
+var_dump($_POST);
+if (isset($_POST["frase"]) && isset($_POST['parola'])) {
+    $frase=$_POST['frase'];
+    $parola = $_POST['parola'];
+} else {
+    $frase = 'torna indietro e inserisci una frase';
+};
 
-$frase=$_POST['frase'];
-$parola = $_POST['parola']
-
+$parola_censurata = str_replace($parola, '***', $frase)
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +34,27 @@ $parola = $_POST['parola']
 
 <body class="container">
     <body>
-        <h2>la tua frase é:</h2>
-        <p>
-            <?php echo str_replace($parola, '***', $frase) ?>
-        </p>
+        <main>
+            <section>
+            <h2>la tua frase é:</h2>
+            <p> <?php echo $frase ?></p>
+            <p> lunghezza:<?php echo strlen($frase) ?> </p>
+            </section>
+            <section>
+            <h2>La tua frase censurata é:</h2>
+            <?php
+            if($parola_censurata){
+                echo "<p><?php echo $parola_censurata?></p>";
+                echo "<p>Lunghezza:" .strlen($parola_censurata)."</p>";
+            } else {
+                echo "<p> la tua parola </p>";
+            }
+            ?>
+            </section>
 
-       
+
+        </main>
     </body>
 
-
 </body>
-
 </html>
